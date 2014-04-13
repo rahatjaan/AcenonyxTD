@@ -1,0 +1,215 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Apache ServiceMix
+
+
+From: 'an unknown organization'
+  - AOP alliance (http://aopalliance.sourceforge.net) aopalliance:aopalliance:jar:1.0
+    License: Public Domain 
+  - iText, a Free Java-PDF library (http://www.itextpdf.com/) com.itextpdf:itextpdf:jar:5.3.4
+    License: GNU Affero General Public License v3  (http://www.fsf.org/licensing/licenses/agpl-3.0.html)
+  - iText-4.2.0 (https://github.com/weiyeh/iText-4.2.0) com.lowagie:itext:jar:4.2.0
+    License: GNU General Lesser Public License (LGPL) version 3.0  (http://www.gnu.org/licenses/lgpl.html)    License: Mozilla Public License Version 2.0  (http://www.mozilla.org/MPL/2.0/)
+  - jdtcore  eclipse:jdtcore:jar:3.1.0
+
+  - mail  javax.mail:mail:jar:1.4.4
+
+  - servlet-api  javax.servlet:servlet-api:jar:2.5
+
+  - Streaming API for XML  javax.xml.stream:stax-api:jar:1.0-2
+    License: GNU General Public Library  (http://www.gnu.org/licenses/gpl.txt)    License: COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0  (http://www.sun.com/cddl/cddl.html)
+  - Smack (http://www.jivesoftware.org/smack/) jivesoftware:smack:jar:3.1.0
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
+  - MySQL java connector (http://dev.mysql.com/usingmysql/java/) mysql:mysql-connector-java:jar:5.1.25
+    License: The GNU General Public License, Version 2  (http://www.gnu.org/licenses/gpl.txt)
+  - ezmorph (http://ezmorph.sourceforge.net) net.sf.ezmorph:ezmorph:jar:1.0.6
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - JasperReports (http://jasperreports.sourceforge.net) net.sf.jasperreports:jasperreports:jar:4.0.1
+    License: GNU Lesser General Public License  (http://jasperreports.sourceforge.net/license.html)
+  - JasperReports Font Extension (http://jasperreports.sourceforge.net) net.sf.jasperreports:jasperreports-fonts:jar:4.0.0
+    License: GNU Lesser General Public License  (http://jasperreports.sourceforge.net/license.html)
+  - geronimo-j2ee-management_1.0_spec  org.apache.geronimo.specs:geronimo-j2ee-management_1.0_spec:jar:1.0
+
+  - Bouncy Castle CMS and S/MIME API (http://www.bouncycastle.org/java.html) org.bouncycastle:bcmail-jdk14:jar:1.38
+    License: Bouncy Castle Licence  (http://www.bouncycastle.org/licence.html)
+  - Bouncy Castle Provider (http://www.bouncycastle.org/java.html) org.bouncycastle:bcprov-jdk14:jar:1.38
+    License: Bouncy Castle Licence  (http://www.bouncycastle.org/licence.html)
+  - Bouncy Castle OpenPGP API (http://www.bouncycastle.org/java.html) org.bouncycastle:bctsp-jdk14:jar:1.38
+    License: Bouncy Castle Licence  (http://www.bouncycastle.org/licence.html)
+  - org.osgi.core  org.osgi:org.osgi.core:jar:4.2.0
+
+  - spring-aop  org.springframework:spring-aop:jar:3.0.5.RELEASE
+
+  - spring-asm  org.springframework:spring-asm:jar:3.0.5.RELEASE
+
+  - spring-beans  org.springframework:spring-beans:jar:3.0.5.RELEASE
+
+  - spring-context  org.springframework:spring-context:jar:3.0.5.RELEASE
+
+  - spring-context-support  org.springframework:spring-context-support:jar:3.0.5.RELEASE
+
+  - spring-core  org.springframework:spring-core:jar:3.0.5.RELEASE
+
+  - spring-expression  org.springframework:spring-expression:jar:3.0.5.RELEASE
+
+  - spring-jms  org.springframework:spring-jms:jar:3.0.5.RELEASE
+
+  - spring-oxm  org.springframework:spring-oxm:jar:3.0.6.RELEASE
+
+  - spring-tx  org.springframework:spring-tx:jar:3.0.5.RELEASE
+
+  - spring-web  org.springframework:spring-web:jar:3.0.7.RELEASE
+
+  - spring-webmvc  org.springframework:spring-webmvc:jar:3.0.7.RELEASE
+
+  - Spring WS Core  org.springframework.ws:spring-ws-core:jar:2.0.3.RELEASE
+
+  - Spring WS Support  org.springframework.ws:spring-ws-support:jar:2.0.3.RELEASE
+
+  - Spring XML  org.springframework.ws:spring-xml:jar:2.0.3.RELEASE
+
+  - PDF Renderer (http://www.swinglabs.org/) org.swinglabs:pdf-renderer:jar:1.0.5
+    License: Lesser General Public License (LGPL)  (http://www.gnu.org/copyleft/lesser.html)
+  - StAX API (http://stax.codehaus.org/) stax:stax-api:jar:1.0.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - WSDL4J (http://sf.net/projects/wsdl4j) wsdl4j:wsdl4j:jar:1.6.1
+    License: CPL  (http://www.opensource.org/licenses/cpl1.0.txt)
+  - XOM (http://xom.nu) xom:xom:jar:1.2.5
+    License: The GNU Lesser General Public License, Version 2.1  (http://www.gnu.org/licenses/lgpl-2.1.html)
+
+From: 'Apache Software Foundation' (http://jakarta.apache.org/)
+  - HttpClient (http://jakarta.apache.org/httpcomponents/httpclient-3.x/) commons-httpclient:commons-httpclient:jar:3.1
+    License: Apache License  (http://www.apache.org/licenses/LICENSE-2.0)
+
+From: 'Apache Software Foundation' (http://www.apache.org/)
+  - Apache POI (http://poi.apache.org/) org.apache.poi:poi:jar:3.9
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache POI (http://poi.apache.org/) org.apache.poi:poi-excelant:jar:3.9
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache POI (http://poi.apache.org/) org.apache.poi:poi-ooxml:jar:3.9
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache POI (http://poi.apache.org/) org.apache.poi:poi-ooxml-schemas:jar:3.9
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Xerces2 Java Parser (http://xerces.apache.org/xerces2-j) xerces:xercesImpl:jar:2.8.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'FuseSource Community' (http://fusesource.com)
+  - Camel :: Spring (http://fusesource.com/products/enterprise-camel/camel-parent/camel-spring/) org.apache.camel:camel-spring:bundle:2.8.0-fuse-01-11
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'FuseSource, Corp.' (http://fusesource.com/)
+  - ActiveMQ :: KahaDB (http://fusesource.com/activemq-parent/kahadb/) org.apache.activemq:kahadb:bundle:5.5.1-fuse-01-11
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: Asynchronous HTTP Client ({$jetty.url}) org.eclipse.jetty:jetty-client:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: Continuation (http://www.eclipse.org/jetty/jetty-continuation) org.eclipse.jetty:jetty-continuation:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: Http Utility (http://www.eclipse.org/jetty/jetty-http) org.eclipse.jetty:jetty-http:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: IO Utility (http://www.eclipse.org/jetty/jetty-io) org.eclipse.jetty:jetty-io:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: JMX Management (http://www.eclipse.org/jetty/jetty-jmx) org.eclipse.jetty:jetty-jmx:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: Security (http://www.eclipse.org/jetty/jetty-security) org.eclipse.jetty:jetty-security:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: Server Core (http://www.eclipse.org/jetty) org.eclipse.jetty:jetty-server:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: Servlet Handling (http://www.eclipse.org/jetty/jetty-servlet) org.eclipse.jetty:jetty-servlet:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: Utility Servlets and Filters (http://www.eclipse.org/jetty/jetty-servlets) org.eclipse.jetty:jetty-servlets:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jetty :: Utilities (http://www.eclipse.org/jetty/jetty-util) org.eclipse.jetty:jetty-util:jar:7.4.5.fuse20111017
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Google, Inc.' (http://www.google.com)
+  - Gson (http://code.google.com/p/google-gson/) com.google.code.gson:gson:jar:2.2.4
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'JFree.org' (http://www.jfree.org/)
+  - jcommon (http://www.jfree.org/jcommon/) jfree:jcommon:jar:1.0.15
+    License: GNU Lesser General Public Licence  (http://www.gnu.org/licenses/lgpl.txt)
+  - jfreechart (http://www.jfree.org/jfreechart/) jfree:jfreechart:jar:1.0.12
+    License: GNU Lesser General Public Licence  (http://www.gnu.org/licenses/lgpl.txt)
+
+From: 'Json-lib' (http://json-lib.sourceforge.net)
+  - json-lib (http://json-lib.sourceforge.net) net.sf.json-lib:json-lib:jar:2.4
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'MetaStuff Ltd.' (http://sourceforge.net/projects/dom4j)
+  - dom4j (http://dom4j.org) dom4j:dom4j:jar:1.6.1
+
+
+From: 'Spring Framework' (http://www.springframework.org/)
+  - Spring OSGi Core (http://www.springframework.org/osgi/) org.springframework.osgi:spring-osgi-core:jar:1.2.1:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Spring OSGi IO (http://www.springframework.org/osgi/) org.springframework.osgi:spring-osgi-io:jar:1.2.1:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Sun Microsystems' (http://www.sun.com/)
+  - Sun JAXB Reference Implementation Runtime (http://jaxb.java.net/jaxb-impl) com.sun.xml.bind:jaxb-impl:jar:2.2.5:compile
+    License: COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0  (http://www.sun.com/cddl/cddl.html)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Commons BeanUtils (http://commons.apache.org/beanutils/) commons-beanutils:commons-beanutils:jar:1.8.3
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Commons Codec (http://commons.apache.org/codec/commons-codec) commons-codec:commons-codec:jar:1.4:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Commons Collections  commons-collections:commons-collections:jar:20040616:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Digester (http://commons.apache.org/digester/) commons-digester:commons-digester:jar:2.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Lang (http://commons.apache.org/lang/) commons-lang:commons-lang:jar:2.5
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Commons Logging (http://commons.apache.org/logging) commons-logging:commons-logging:jar:1.1.1:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Commons Logging Api (http://commons.apache.org/logging) commons-logging:commons-logging-api:jar:1.1:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Net (http://commons.apache.org/net/) commons-net:commons-net:jar:2.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - ActiveIO :: Core (http://activemq.apache.org/activeio-core/) org.apache.activemq:activeio-core:bundle:3.1.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - ActiveMQ :: Core (http://activemq.apache.org/activemq-core/activemq-core) org.apache.activemq:activemq-core:jar:5.3.2:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - ActiveMQ Protocol Buffers Implementation and Compiler (http://activemq.apache.org/activemq-protobuf) org.apache.activemq.protobuf:activemq-protobuf:maven-plugin:1.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Ant Core (http://ant.apache.org/ant/) org.apache.ant:ant:jar:1.8.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Ant Launcher (http://ant.apache.org/ant-launcher/) org.apache.ant:ant-launcher:jar:1.8.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Core (http://camel.apache.org/camel-parent/camel-core/camel-core) org.apache.camel:camel-core:jar:2.10.6:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: HTTP (http://camel.apache.org/camel-parent/camel-http) org.apache.camel:camel-http:bundle:2.10.6
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Jetty (http://camel.apache.org/camel-parent/camel-jetty) org.apache.camel:camel-jetty:bundle:2.10.6
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: JMS (http://camel.apache.org/camel-parent/camel-jms) org.apache.camel:camel-jms:bundle:2.10.6
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Mail (http://camel.apache.org/camel-parent/camel-mail) org.apache.camel:camel-mail:bundle:2.10.6
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Spring Web Services (http://camel.apache.org/camel-parent/camel-spring-ws) org.apache.camel:camel-spring-ws:bundle:2.10.6
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: XML JSON (http://camel.apache.org/camel-parent/camel-xmljson) org.apache.camel:camel-xmljson:bundle:2.10.6
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Geronimo Specs :: J2EE Management 1.1 (http://geronimo.apache.org/specs/geronimo-j2ee-management_1.1_spec/geronimo-j2ee-management_1.1_spec) org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:jar:1.0.1:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Geronimo Specs :: JMS 1.1 (http://geronimo.apache.org/specs/geronimo-jms_1.1_spec/geronimo-jms_1.1_spec) org.apache.geronimo.specs:geronimo-jms_1.1_spec:jar:1.1.1:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Geronimo Specs :: Servlet 2.5 (http://geronimo.apache.org/specs/geronimo-servlet_2.5_spec/geronimo-servlet_2.5_spec) org.apache.geronimo.specs:geronimo-servlet_2.5_spec:jar:1.1.2:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Xalan Java Serializer (http://xml.apache.org/xalan-j/) xalan:serializer:jar:2.7.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Xalan-Java (http://xml.apache.org/xalan-j/xalan) xalan:xalan:jar:2.7.1:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - XML APIs (http://xml.apache.org/commons/#external/xml-apis) xml-apis:xml-apis:jar:1.3.02:compile
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'XmlBeans' (http://xmlbeans.apache.org/)
+  - XmlBeans (http://xmlbeans.apache.org) org.apache.xmlbeans:xmlbeans:jar:2.3.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+
