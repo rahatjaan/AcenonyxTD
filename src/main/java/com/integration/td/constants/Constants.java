@@ -24,4 +24,7 @@ public class Constants {
 	
 	public static final String HOST = "https://www.koronacloud.com/web/api/v1/";
 	public static final String TOKEN = "01ue0m7gdy0ooo0nir2rs33ofrw01bvb7t6g71tzd014gkp0d25ahr3";
+	
+	public static final String CLIENTID = "touchdine-2";
+	public static final String KESSIERNUMBER = "1590";
 }

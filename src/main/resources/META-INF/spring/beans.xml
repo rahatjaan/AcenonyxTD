@@ -19,7 +19,7 @@
       	<!-- <property name="USER" value="servicemix"/>
       	<property name="PASS" value="cyber8T0ken"/> -->
       	<property name="USER" value="root"/>
-      	<property name="PASS" value="rahat547"/>
+      	<property name="PASS" value="root"/>
       </bean>
       
       <bean id="myEmailSource" class="com.integration.td.constants.EmailSource">
