@@ -7,14 +7,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 import javax.xml.soap.MessageFactory;
@@ -37,18 +29,7 @@ import org.apache.camel.Processor;
 import com.integration.td.constants.Constants;
 import com.integration.td.constants.EmailSource;
 import com.integration.td.transformer.BillDetailsTransformer;
-import com.integration.td.transformer.GetListRoomsTransformer;
-import com.integration.td.transformer.GuestCheckInTransformer;
-import com.integration.td.transformer.GuestPlaceOrderTransformer;
-import com.integration.td.transformer.GuestSignatureTransformer;
-import com.integration.td.transformer.GuestStayInfoTransformer;
-import com.integration.td.transformer.GuestTransactionsTransformer;
-import com.integration.td.transformer.HotelFolioTransformer;
 import com.integration.td.transformer.ReceiveTDOrderTransformer;
-import com.integration.td.transformer.ReportProblemTransformer;
-import com.integration.td.transformer.ReservationTransformer;
-import com.integration.td.transformer.UpdateGuestStayInfoTransformer;
-import com.integration.td.transformer.UserPictureTransformer;
 import com.integration.td.utils.SendEmail;
 import com.integration.td.utils.XMLElementExtractor;
 
@@ -97,12 +78,8 @@ public class DynamicRouteProcessor implements Processor{
 			if(req.contains("</payload>"))
 				req = req.substring(0,req.indexOf("</payload>"));
 			
+			req = "<request>"+req+"</request>";
 			System.out.println("REQUEST : "+req);
-			try{
-				Thread.sleep(1000000000);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
 			try {
 	            // Create SOAP Connection
 	            SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
@@ -113,51 +90,61 @@ public class DynamicRouteProcessor implements Processor{
 	            SOAPMessage soapResponse = null;
 	            
 	            if(Constants.RECEIVETDORDER.equalsIgnoreCase(flow)){
-	            	// TODO: Have to send soap request here
-	            	soapResponse = soapConnection.call(createSOAPRequestForCreateAndLockTransaction(req), url);
-	            	String message = printSOAPResponse(soapResponse); 
-	            	//createSOAPRequestForAddItems(); TODO: Add Items
-	            	//createSOAPRequestForReleaseTransaction();//TODO: Release transaction.
-	            	
-	            	//TODO: Set Ticket Number in the body and return.
-	            	System.out.println(req);
-	            	String val = UUID.randomUUID().toString();
-	            	System.out.println("Val: "+val);
-	            	String body = "<ReceiveTDOrder><isErrorOccured>false</isErrorOccured><message>Your request has been received</message><OrderId>"+val+"</OrderId></ReceiveTDOrder>";
-	            	arg0.getOut().setBody(body);
+	            	String orderNumber = null;
+	            	String terminalId = null;
+	            	String tableNumber = null;
+	            	try{
+	            		orderNumber = XMLElementExtractor.extractXmlElementValue(req, "order_number");
+	            		terminalId = XMLElementExtractor.extractXmlElementValue(req, "terminalId");
+	            		tableNumber = XMLElementExtractor.extractXmlElementValue(req, "tableNumber");
+	            	}catch(Exception e){
+	            		String body = "{\"ServiceError\":{\"faultstring\":\"An exception has occured.\",\"faultreason\":\"You are missing one of these three, please check your request properly before submitting (1). Order Number (2). Terminal Id (3). Table Number\"}}";
+			            soapConnection.close();
+			            arg0.getOut().setBody(body);
+			            return;
+	            	}
+		            	if(null == orderNumber || null == terminalId || null == tableNumber){
+		            		String body = "{\"ServiceError\":{\"faultstring\":\"An exception has occured.\",\"faultreason\":\"You are missing one of these three, please check your request properly before submitting (1). Order Number (2). Terminal Id (3). Table Number\"}}";
+				            soapConnection.close();
+				            arg0.getOut().setBody(body);
+		            	}else{
+			            	soapResponse = soapConnection.call(createSOAPRequestForCreateAndLockTransaction(req), url);
+			            	String message = printSOAPResponse(soapResponse); 
+							int index1 = req.indexOf("<products>");
+							int index2 = req.indexOf("</products>");
+							String val = req.substring(index1,index2);
+							message = message.substring(message.indexOf("beleg"),message.indexOf("kassierer"));
+							message = "<"+ message +"/beleg>";
+							while(index1 < index2 && val.contains("<id>")){
+								index1 = val.indexOf("<id>");
+								System.out.println(val.substring(index1+4,val.indexOf("</id>")));
+								String productNumber = val.substring(index1+4,val.indexOf("</id>"));
+								index1 = val.indexOf("<quantity>");
+								System.out.println(val.substring(index1+10,val.indexOf("</quantity>")));
+								String quantity = val.substring(index1+10,val.indexOf("</quantity>"));
+								val = val.substring(val.indexOf("</quantity>")+11);
+								System.out.println("MESSAGEEEEEEEEEE IS: "+message);
+								System.out.println("Beleg Nummber: "+XMLElementExtractor.extractXmlElementValue(message, "nummer"));
+								System.out.println("Comment is: "+XMLElementExtractor.extractXmlElementValue(req, "commentText"));
+								soapResponse = soapConnection.call(createSOAPRequestForAddItems(XMLElementExtractor.extractXmlElementValue(message, "nummer"), productNumber, quantity, XMLElementExtractor.extractXmlElementValue(req, "commentText")), url);
+								
+							}
+							soapResponse = soapConnection.call(createSOAPRequestForReleaseTransaction(XMLElementExtractor.extractXmlElementValue(message, "nummer")), url);
+			            	
+			            	
+			            	//System.out.println(req);
+			            	//String val = UUID.randomUUID().toString();
+			            	//System.out.println("Val: "+val);
+			            	//String body = "<ReceiveTDOrder><isErrorOccured>false</isErrorOccured><message>Your request has been received</message><OrderId>"+val+"</OrderId></ReceiveTDOrder>";
+			            	arg0.getOut().setBody("<ticketNumber>"+XMLElementExtractor.extractXmlElementValue(message, "nummer")+"</ticketNumber>");
+		            	}
 	            }else if(Constants.FETCHDYNAMICMENU.equalsIgnoreCase(flow)){
 	            	System.out.println(callProducts(arg0));
 	            }else if(Constants.COMMODITYGROUPS.equalsIgnoreCase(flow)){
 	            	System.out.println(callCommodityGroups(arg0));
 	            }
-	            if(!Constants.GUESTCHECKIN.equalsIgnoreCase(flow) && !isNotValidResLookUp){
-	            // Process the SOAP Response
-	            String message = printSOAPResponse(soapResponse); 
-	            boolean flag = false;
-	            if(message!=null || !message.isEmpty()){
-		            message = message.replaceAll("&lt;","<");
-		            message = message.replaceAll("&gt;",">");
-		            System.out.println("BEFORE TRANSFORMATION: "+message);
-		           
-		            if(message.contains("<faultcode>")){
-		            	flag = true;
-		            }
-	            }
-	            String body = "";
-	            if(Constants.GUESTBILLINFO.equalsIgnoreCase(flow) || Constants.SEND_BILL_INFO_EMAIL.equalsIgnoreCase(flow)){
-	            	boolean sendEmail = false;
-	            	if(Constants.SEND_BILL_INFO_EMAIL.equalsIgnoreCase(flow)){
-	            		sendEmail = true;
-	            	}
-//	            	message= message+req;
-	            	body = BillDetailsTransformer.transform(message,flag,sendEmail,emailSource,req);
-	            	
-	            }else if(Constants.RECEIVETDORDER.equalsIgnoreCase(flow)){
-	            	body = ReceiveTDOrderTransformer.transform(message,flag);
-	            }
 	            soapConnection.close();
-	            arg0.getOut().setBody(body);
-	            }
+	            //arg0.getOut().setBody(body);
 	            if(isNotValidResLookUp){
 	            	String body = "{\"ServiceError\":{\"faultstring\":\"An exception has occured.\",\"faultreason\":\"Please provide any of these three: (1). Reservation Confirmation Number (2). Last Name AND Last 4 digits of Credit Card (3). Hotel Loyalty Number\"}}";
 		            soapConnection.close();
@@ -252,26 +239,26 @@ public class DynamicRouteProcessor implements Processor{
         SOAPPart soapPart = soapMessage.getSOAPPart();
 
         String serverURI = "http://orderpad.korona.combase.de/";
-
         // SOAP Envelope
         SOAPEnvelope envelope = soapPart.getEnvelope();
         envelope.addNamespaceDeclaration("ord", serverURI);
         String orderNumber=XMLElementExtractor.extractXmlElementValue(value, "order_number");
+        System.out.println("VALUE IS: 1"+orderNumber);
         
         SOAPBody soapBody = envelope.getBody();
         SOAPElement soapBodyElem = soapBody.addChildElement("createAndLockBeleg", "ord");
         SOAPElement soapBodyElem1 = soapBodyElem.addChildElement("clientId");
-        soapBodyElem1.addTextNode(Constants.CLIENTID);
+        soapBodyElem1.addTextNode(XMLElementExtractor.extractXmlElementValue(value, "terminalId"));
         SOAPElement soapBodyElem2 = soapBodyElem.addChildElement("auftragsnummer");
     	soapBodyElem2.addTextNode(orderNumber);
         SOAPElement soapBodyElem3 = soapBodyElem.addChildElement("kassierernummer");
-        soapBodyElem3.addTextNode(Constants.KESSIERNUMBER);
-
+        soapBodyElem3.addTextNode(XMLElementExtractor.extractXmlElementValue(value, "tableNumber"));
+        System.out.println("VALUE IS: 2");
         MimeHeaders headers = soapMessage.getMimeHeaders();
         headers.addHeader("SOAPAction", serverURI  + "createAndLockBeleg");
-
+        System.out.println("VALUE IS: 3");
         soapMessage.saveChanges();
-
+        
         /* Print the request message */
         System.out.print("Request SOAP Message = ");
         soapMessage.writeTo(System.out);

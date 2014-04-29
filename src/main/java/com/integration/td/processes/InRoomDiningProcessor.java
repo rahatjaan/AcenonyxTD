@@ -40,7 +40,6 @@ public class InRoomDiningProcessor implements Processor {
 	}
 
 	public void process(Exchange exchange) throws Exception {
-		System.out.println("Google");
 		InRoomOrderPayLoad payload = populateTenantInfo(exchange);
 		AuditTrail.getAuditLogInstance().updateAuditTrial("Rahat", "2013-08-25", "Testing Action", "SUCCESS", "rahatAli", "1" , exchange.getIn().getBody().toString(), exchange.getIn().getHeaders().toString(),dataSource);
 		//LOGGER.info("IN ROOM DINING PROCESSOR");
@@ -52,7 +51,6 @@ public class InRoomDiningProcessor implements Processor {
 
 	public InRoomOrderPayLoad populateTenantInfo(Exchange exchange) {
 		try{
-			System.out.println("HEREE");
 			String value = exchange.getIn().getBody().toString();
 			String tenantId=XMLElementExtractor.extractXmlElementValue(value, "tenantId");
 			if(tenantId==null)

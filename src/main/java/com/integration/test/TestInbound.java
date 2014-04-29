@@ -16,13 +16,14 @@ public class TestInbound {
 			//String urlParameters = "{'UpdateReservationRQ'= {'tenantId'='2','confirmationNumber'='1','departureDate'='10/12/2013','arrivalDate'='10/10/2013','isCheckedOut'='2','firstName'='Test','roomId'='2'}}";
 			//String urlParameters = "{'ReservationLookupRQ'= {'tenantId'='2','requestorId'='1','confirmationNumber'='3'}}";
 			//String urlParameters = "{'ReservationLookupRQ'= {'tenantId'='1','terminalId'='ABC123','lastName'='Adedokun','maskedCardNumber'='XXXXXXXXX1134'}}";
-			//String urlParameters = "{'ReservationLookupRQ'= {'tenantId'='1','terminalId'='ABC123','lastName'='Adedokun','roomNumber'='2141'}}";
+			//String urlParameters = "{'ReservationLookupRQ'= {'terminalId'='ABC123',' loyaltyCardNumber'='ABC123'}}";
+			String urlParameters = "{'ReservationLookupRQ'= {'tenantId'='1','terminalId'='ABC123','lastName'='Adedokun','roomNumber'='2141'}}";
 			//String urlParameters = "{'HotelFolioRQ'= {'tenantId'='1','terminalId'='123','reservationNumber'='123','folioType'='check-in'}}";
 			//String urlParameters = "{'AddTenant'= {'outboundUrl'='http=//asdf.com','outboundType'= '1s','phoneNum'= '123'}}";
 			//String urlParameters = "{  'guestCheckIn'= { 'tenantId'='1',   'guestInfo'= {	'firstName'= 'Adeel',	'lastName'= 'Shahzad',	'fullAddress'= 'Islamabad',	'mobileNumber'= '423',	'hhNumber'= '123',	'al'= '132',	'bonusAl'= '123',	'confirmationNumber'= '123',	'email'= 'mrseven77seven@gmail.com',	'membershipNumber'= '123',	'bonusCode'= '432',	'groupName'= 'Group'    },    'guestStayInfo'= {	'roomNumber'= '543',	'floorNumber'= '324',	'arrivalDate'= '2013-11-11',	'departureDate'= '2013-11-11',	'numberOfChildren'= '2',	'numberOfAdult'= '2',	'roomRate'= '99'    }  }}";
 			//String urlParameters = "{  'ListRoomsRQ'= {    'tenantId'= '2', 'fromPrice'='88.40', 'toPrice'='132.45', 'isSmoking'='1'}}";
 			//String urlParameters = "{'products'= [ { 'id'= 88, 'size_id'= '1', 'quantity'= '2', 'modifiers'= [ { 'groupid'= 1, 'modifierslist'= [ 1, 4 ] }, { 'groupid'= 2, 'modifierslist'= [ 2, 5 ] } ] }, { 'id'= 90, 'size_id'= '1', 'quantity'= '2', 'modifiers'= [ { 'groupid'= 1, 'modifierslist'= [ 1, 4 ] }, { 'groupid'= 2, 'modifierslist'= [ 2, 5 ] } ] } ], 'parameters'= { 'tableNumber'= '3', 'patronName'= 'sdf', 'phoneNumber'= '3455435', 'emailAddress'='madank@chetu.com', 'numberOfPeople'= '1', 'commentText'= 'sdfgdfgdf sfgdgf', 'tenantId'='1', 'terminalId'='2' }, 'order_number'= '123'}";
-			String urlParameters = "{'products'= [ { 'id'= 88, 'size_id'= '1', 'quantity'= '2', 'modifiers'= [ { 'groupid'= 1, 'modifierslist'= [ 1, 4 ] }, { 'groupid'= 2, 'modifierslist'= [ 2, 5 ] } ] }, { 'id'= 90, 'size_id'= '1', 'quantity'= '2', 'modifiers'= [ { 'groupid'= 1, 'modifierslist'= [ 1, 4 ] }, { 'groupid'= 2, 'modifierslist'= [ 2, 5 ] } ] } ], 'parameters'= { 'tableNumber'= '1590', 'patronName'= 'sdf', 'phoneNumber'= '3455435', 'emailAddress'='madank@chetu.com', 'numberOfPeople'= '122', 'commentText'= 'sdfgdfgdf sfgdgf', 'tenantId'='3', 'terminalId'='touchdine-2' }, 'order_number'= '123'}";
+			//String urlParameters = "{'products'= [ { 'id'= 11, 'size_id'= '1', 'quantity'= '2', 'modifiers'= [ { 'groupid'= 1, 'modifierslist'= [ 1, 4 ] }, { 'groupid'= 2, 'modifierslist'= [ 2, 5 ] } ] }, { 'id'= 12, 'size_id'= '1', 'quantity'= '2', 'modifiers'= [ { 'groupid'= 1, 'modifierslist'= [ 1, 4 ] }, { 'groupid'= 2, 'modifierslist'= [ 2, 5 ] } ] },{ 'id'= 13, 'size_id'= '1', 'quantity'= '2', 'modifiers'= [ { 'groupid'= 1, 'modifierslist'= [ 1, 4 ] }, { 'groupid'= 2, 'modifierslist'= [ 2, 5 ] } ] } ], 'parameters'= { 'tableNumber'= '1590', 'patronName'= 'sdf', 'phoneNumber'= '3455435', 'emailAddress'='madank@chetu.com', 'numberOfPeople'= '122', 'commentText'= 'sdfgdfgdf sfgdgf', 'tenantId'='3', 'terminalId'='touchdine-2' }}";
 			//String urlParameters = "{'guestCheckOut'= {'tenantId'='1','lastName'= 'Adedokun','email'= 'badedokun@acenonyx.com','creditCardNumber'= '7777','roomNumber'='2578'}}";
 			//String urlParameters = "{'GetGuestStayInfoRQ'= {'tenantId'='1','lastName'= 'Cat','email'= 'cat@cat.cat','roomNumber'= '666'}}";
 			//String urlParameters = "{'ReportProblemRQ'= {'tenantId'='1','lastName'= 'Adedokun','roomNumber'= 'AC123','confirmationNumber'= 'AAA222', 'problemID'='001','problemMessage'='warning related to the material supply, etc'}}";
@@ -33,7 +34,7 @@ public class TestInbound {
 			//String urlParameters = "{'BillDetailsRequest' = {'tenantId' = '2' , 'lastName' = 'Kostanyan', 'email' = 'nkostanyan@acenonyx.com', 'roomNumber' = '2'} }";
 			//URL url = new URL("http://65.181.118.166:8888/receivetdorder");
 			System.out.println(urlParameters.trim().replaceAll("\\s+", " "));
-			URL url = new URL("http://localhost:8888/receivetdorder");
+			URL url = new URL("http://65.181.118.166:8888/reservationLookup");
 			URLConnection conn = url.openConnection();
 
 			conn.setDoOutput(true);
